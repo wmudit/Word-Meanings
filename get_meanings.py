@@ -20,6 +20,6 @@ for row in vocab.index:
 		if 'definitions' in json_obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]:
 			vocab['Meaning'][row] = json_obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['definitions'][0]
 		if 'examples' in json_obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]:
-			vocab['Sentence'] = json_obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['examples'][0]['text']
+			vocab['Sentence'][row] = json_obj['results'][0]['lexicalEntries'][0]['entries'][0]['senses'][0]['examples'][0]['text']
 
 vocab.to_csv('words.csv')
